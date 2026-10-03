@@ -1,8 +1,10 @@
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 .venv/
 venv/
+env/
 *.egg-info/
 dist/
 build/
@@ -12,6 +14,21 @@ build/
 .gs2router.json
 akun.txt
 
+# Account batch files
+BAL-*.txt
+GSUITE-*.txt
+*.bak
+test*.txt
+
+# API docs (internal)
+api-en.json
+api-en.yaml
+
+# Captured HTML/browser files
+Enter your phone number.html
+Enter your phone number_files/
+_temp_9router/
+
 # OS files
 .DS_Store
 Thumbs.db
@@ -20,5 +37,6 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Temp browser profiles
+# Temp browser profiles created during login
 gs2r_*/
+stealth_*/

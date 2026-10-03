@@ -4,7 +4,7 @@ import os
 
 
 def read_accounts(filepath):
-    """Read accounts from file. Format: email|password (one per line)."""
+    """Read accounts from file. Format: email|password or email:password (one per line)."""
     if not os.path.exists(filepath):
         print(f" [ERROR] File '{filepath}' not found!")
         return []
@@ -14,9 +14,15 @@ def read_accounts(filepath):
 
     accounts = []
     for line in lines:
-        if "|" not in line:
+        # Determine the separator: prefer "|" if present, otherwise ":"
+        if "|" in line:
+            sep = "|"
+        elif ":" in line:
+            sep = ":"
+        else:
             continue
-        parts = line.split("|", 1)
+
+        parts = line.split(sep, 1)
         email, password = parts[0].strip(), parts[1].strip()
         if email and password:
             accounts.append({"email": email, "password": password, "raw": line})

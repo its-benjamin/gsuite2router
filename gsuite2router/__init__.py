@@ -1,3 +1,3 @@
-"""gsuite2router - Auto Add GSuite accounts to 9Router Antigravity provider."""
+"""gsuite2router — Bulk-add Google Workspace accounts to 9Router providers."""
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
